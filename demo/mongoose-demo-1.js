@@ -14,13 +14,13 @@ async function main(){
 
     const Kitten = mongoose.model("Kitten", kittySchema)
 
-    await mongoose.connect("mongodb://localhost:27017/mongoose-demo-1");
+    await mongoose.connect("mongodb://0.0.0.0:27017/mongoose-demo-1");
 
-    /* const lambada = new Kitten({name: "Lambada", birthYear: 1990})
-    await lambada.save() */
+    const lambada = new Kitten({name: "Lambada", birthYear: 1990})
+    await lambada.save()
 
-    /* const albis = new Kitten({name: "Albis", birthYear: 1985})
-    await albis.save() */
+    const albis = new Kitten({name: "Albis", birthYear: 1985})
+    await albis.save()
 
     const kittens = await Kitten.find()
 
